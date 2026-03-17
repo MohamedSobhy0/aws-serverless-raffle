@@ -1,0 +1,26 @@
+Raffle_OR_Drawing_Notes
+================================
+
+1- create DynamoDB table
+    table name: Devops_raffle
+    partition key = email(string)
+    object {email(string), name(string), phone(string), won(string)}
+------------------------------------
+
+2- create lambda function
+
+    apply: put item in DynamoDB table
+    count: Get items count
+    draw: choose 3 randome itemes and mark them as Winners.
+------------------------------------
+
+3- create API Gateway:
+    create Domain name [Optional If you have One]
+    create certificate for This domain From ACM
+    add the Domain as a custom domain name to The API Gateway.
+    create dns A record link domain with API endpoint
+    alias to API gateway APIcustum domain API mapping 
+    connect lampda function With API gateway
+--------------------------------------------
+
+4- host html page on s3 and cloud front
