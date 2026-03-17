@@ -8,7 +8,7 @@ Raffle_OR_Drawing_Notes
 ------------------------------------
 
 2- create lambda function
-
+    create IAM role [access gynamodb, create logs ]
     apply: put item in DynamoDB table
     count: Get items count
     draw: choose 3 randome itemes and mark them as Winners.
