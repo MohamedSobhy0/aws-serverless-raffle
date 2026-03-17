@@ -5,49 +5,49 @@ const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
 
 export const handler = async (event) => {
-    console.log("---devops90---start-handler");
-    console.log("---devops90---event", event);
-
-    let TableName = "devops90_raffle";
+    console.log("---devops---start-handler");
+    console.log("---devops---event", event);
+    
+    let TableName = "Devops_raffle";
     let body;
 
     try {
-        if (event.body) {
-            try {
+        if(event.body){
+            try{
                 body = JSON.parse(event.body);
-            } catch (e) {
+            } catch(e){
                 body = event.body;
             }
         } else {
             body = event;
         }
-        console.log("---devops90---body", body);
+        console.log("---devops---body", body);
 
-        if (!body.email) {
+        if(!body.email){
             return "where is your email!";
-        } else if (!body.phone) {
+        } else if(!body.phone){
             return "where is your phone!";
-        } if (!body.name) {
+        }if(!body.name){
             return "where is your name!";
         }
-
-
+        
+         
         const command = new PutCommand({
             TableName: TableName,
             Item: {
-                email: body.email,
-                phone: body.phone,
-                name: body.name,
-                won: "no"
+              email: body.email,
+              phone: body.phone,
+              name: body.name,
+              won: "no"
             },
         });
-
+          
         const dynamo_response = await docClient.send(command);
-        console.log("---devops90---dynamo-response", dynamo_response);
+        console.log("---devops---dynamo-response", dynamo_response);
         return "Thanks, Your data may have been received;)";
-
+          
     } catch (e) {
-        console.log("---devops90---e", e);
+        console.log("---devops---e", e);
         return e.message;
     }
 };
