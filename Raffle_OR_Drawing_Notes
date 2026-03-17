@@ -23,4 +23,8 @@ Raffle_OR_Drawing_Notes
     connect lampda function With API gateway
 --------------------------------------------
 
-4- host html page on s3 and cloud front
+4- enable mutual tls authentication for api gateway
+
+----------------------------------------------------
+
+5- host html page on s3 and cloud front
