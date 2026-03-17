@@ -5,12 +5,12 @@ const dynamo = new DynamoDBClient({});
 const client = DynamoDBDocumentClient.from(dynamo);
 
 export const handler = async (event) => {
-    console.log("---devops90---start-handler");
-    console.log("---devops90---event", event);
-    let TableName = "devops90_raffle";
+    console.log("---devops---start-handler");
+    console.log("---devops---event", event);
+    let TableName = "devops_raffle";
     let winners_count = 3;
     try {
-        console.log("---devops90---try");
+        console.log("---devops---try");
 
         const command = new ScanCommand({
             FilterExpression: "won = :w",
@@ -22,7 +22,7 @@ export const handler = async (event) => {
 
         const data = await client.send(command);
 
-        console.log("---devops90---items-count", data.Items.length);
+        console.log("---devops---items-count", data.Items.length);
 
         if (data.Items.length < winners_count) {
             return "There is no enough data! " + data.Items.length + " only";
