@@ -3,9 +3,9 @@ import { DynamoDBClient, ScanCommand } from "@aws-sdk/client-dynamodb";
 const client = new DynamoDBClient({});
 
 export const handler = async (event, context) => {
-    console.log("---devops90---start-handler");
-    console.log("---devops90---event", event);
-    let TableName = "devops90_raffle";
+    console.log("---devops---start-handler");
+    console.log("---devops---event", event);
+    let TableName = "devops_raffle";
     try {
         const command = new ScanCommand({
             TableName: TableName,
@@ -14,10 +14,10 @@ export const handler = async (event, context) => {
 
         const response = await client.send(command);
 
-        console.log("---devops90---count", response);
+        console.log("---devops---count", response);
         return response.Count;
     } catch (e) {
-        console.log("---devops90---e", e);
+        console.log("---devops---e", e);
         return e.message;
     }
 };
