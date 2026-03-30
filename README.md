@@ -41,7 +41,7 @@ Frontend (HTML/JS) → API Gateway → Lambda → DynamoDB
 
 ### 🗄️ Database (DynamoDB)
 
-* Table Name: devops90_raffle
+* Table Name: devops_raffle
 * Attributes:
 
   * email (Primary Key)
@@ -102,5 +102,3 @@ draw.js
 
 
 ## 👨‍💻 mohamed Sobhy
-
-AWS & DevOps Enthusiast 🚀
