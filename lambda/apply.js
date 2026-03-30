@@ -8,7 +8,7 @@ export const handler = async (event) => {
     console.log("---devops---start-handler");
     console.log("---devops---event", event);
     
-    let TableName = "Devops_raffle";
+    let TableName = "devops_raffle";
     let body;
 
     try {
